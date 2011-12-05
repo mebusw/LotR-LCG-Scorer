@@ -5,7 +5,7 @@
 	
 	<div class="tweets">
 	%for tweet in postlist:
-		<p><img src="/static/avatar.png" /> <strong><a href="/{{tweet['username']}}">{{tweet['username']}}</a></strong> {{tweet['content']}}<span><a href="/{{tweet['username']}}/statuses/{{tweet['_id']}}">permalink</a></span></p>
+		<p><img src="/static/avatar.png" /> <strong><a href="/{{tweet['uid']}}">{{tweet['uid']}}</a></strong> {{tweet['content']}}<span><a href="/{{tweet['uid']}}/statuses/{{tweet['_id']}}">permalink</a></span></p>
 	%end
 	</div>
 </div>
