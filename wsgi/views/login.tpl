@@ -4,7 +4,7 @@
 <form method="POST" action="/login" id="login">
 	<h2>Login</h2>
 	%if error_login:
-		<p>wrong username/password</p>
+		<p>incorrect username/password</p>
 	%end
 	<p><label for="login-name">username:</label><input type="text" name="name" id="login-username"/></p>
 	<p><label for="login-password">password:</label><input type="password" name="password" id="login-password"/></p>

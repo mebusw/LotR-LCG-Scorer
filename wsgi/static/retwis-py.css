@@ -26,9 +26,8 @@ body{;background:url('/static/bg-clouds.png') top left repeat-x rgb(192,222,237)
 
 body,textarea,input  {
   font-size:100%;
-  font-family:'Liberation Sans','Helvetica','Arial','sans-serif'
+  font-family:'Liberation Sans','Arimo','Helvetica','Arial','sans-serif'
 }
-
 
 ol, ul {
 	list-style: none;
@@ -61,7 +60,7 @@ table {
 	border-spacing: 0;
 }
 
-body{font-size:100%;font-family:'Liberation Sans','Helvetica','Arial','sans-serif';background:url('/static/bg-clouds.png') top left repeat-x rgb(192,222,237);}
+body{font-size:100%;font-family:'Liberation Sans','Arimo','Helvetica','Arial','sans-serif';background:url('/static/bg-clouds.png') top left repeat-x rgb(192,222,237);}
 p{font-size:1.2em;}
 #header{width:760px;margin:0 auto;overflow:hidden;padding:5px 0 0 0;}
 #nav{float:right;width:200px;background:#FFF;-webkit-border-radius:5px;line-height:1.3em;font-size:1.3em;padding:5px;}

@@ -1,9 +1,0 @@
-mongo --host ${OPENSHIFT_NOSQL_DB_HOST} --port ${OPENSHIFT_NOSQL_DB_PORT} \
-  -u admin -p ${OPENSHIFT_NOSQL_DB_PASSWORD}
--I4VGnvigQpH
-
-use twt;
-db.addUser("app", "password");
-db.createCollection("users");
-db.createCollection("posts");
-

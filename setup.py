@@ -5,7 +5,7 @@ setup(name='OpenShift Mongo Twt',
       description='OpenShift Twitter clone using MongoDB',
       author='Mark Atwood',
       author_email='matwood@redhat.com',
-      url='http://www.python.org/sigs/distutils-sig/',
+      url='https://github.com/openshift/openshift-twt-mongo-demo',
       # dont install bottle requirement, bottle is included in source
       install_requires=['pymongo'],
      )
