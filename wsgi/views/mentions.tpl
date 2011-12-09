@@ -13,6 +13,6 @@
 	<div class="tweets">
 	</div>
 </div>
-%include shared/side.tpl username=username
+%include shared/side.tpl username=username,userlist=userlist
 	
 %include shared/footer.tpl

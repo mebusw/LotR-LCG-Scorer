@@ -37,6 +37,13 @@ def user_create(username, password):
   userid = mongo_db.users.insert(nuser)
   return userid
 
+def user_list():
+  l = []
+  for u in mongo_db.users.find():
+    l.append(u['_id'])
+  l.sort()
+  return l
+
 def user_follow(user, tuser):
   user['followee'].append(tuser['_id'])
   mongo_db.users.update({ '_id': user['_id']}, user)
@@ -118,10 +125,11 @@ def home():
     post = post_find_by_id(post_id)
     if post:
       postlist.insert(0, post)
-  
+
   # bottle.TEMPLATES.clear()
   return bottle.template('timeline',
                          postlist=postlist,
+                         userlist=user_list(),
                          page='timeline',
                          username=luser['_id'],
                          logged=True)
@@ -143,6 +151,7 @@ def user_page(name):
   # bottle.TEMPLATES.clear()
   return bottle.template('user',
                          postlist=postlist,
+                         userlist=user_list(),
                          page='user',
                          username=tuser['_id'],
                          logged=True,
