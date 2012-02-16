@@ -10,7 +10,7 @@ Quickstart
 
 2) Create a wsgi-3.2 application and attach mongodb to it:
 
-    rhc-create-app -a twt -t wsgi-3.2
+    rhc-create-app -a twt -t python-2.6
     rhc-ctl-app -a twt -e add-mongodb-2.0
 
 3) Add this upstream repo
