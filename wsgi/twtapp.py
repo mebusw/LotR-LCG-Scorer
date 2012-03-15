@@ -12,7 +12,7 @@ mongo_con = pymongo.Connection(
   os.environ['OPENSHIFT_NOSQL_DB_HOST'],
   int(os.environ['OPENSHIFT_NOSQL_DB_PORT']))
 
-mongo_db = mongo_con['twt']
+mongo_db = mongo_con[os.environ['OPENSHIFT_APP_NAME']]
 mongo_db.authenticate(os.environ['OPENSHIFT_NOSQL_DB_USERNAME'],
                       os.environ['OPENSHIFT_NOSQL_DB_PASSWORD'])
 
