@@ -8,10 +8,10 @@ Quickstart
 
 1) Create an account at http://openshift.redhat.com/
 
-2) Create a wsgi-3.2 application and attach mongodb to it:
+2) Create a python application and attach mongodb to it:
 
-    rhc-create-app -a twt -t python-2.6
-    rhc-ctl-app -a twt -e add-mongodb-2.0
+    rhc app create -a twt -t python-2.6
+    rhc app cartridge add -a twt -c mongodb-2.0
 
 3) Add this upstream repo
 
@@ -25,4 +25,4 @@ Quickstart
 
 5) That's it, you can now browse to your application at:
 
-    http://twt-$yourlogin.rhcloud.com
+    http://twt-$yournamespace.rhcloud.com
