@@ -37,6 +37,7 @@
 		8F13047915948EC400D76547 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F13047815948EC400D76547 /* AppDelegate.m */; };
 		8F13047C15948EC400D76547 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F13047B15948EC400D76547 /* MainViewController.m */; };
 		8F13047E15948EC400D76547 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F13047D15948EC400D76547 /* MainViewController.xib */; };
+		8F13048815948EF200D76547 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 8F13048715948EF200D76547 /* www */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,10 +55,10 @@
 		8F13044415948EC400D76547 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8F13044615948EC400D76547 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8F13044815948EC400D76547 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		8F13044C15948EC400D76547 /* LotR LCG Scorer-Info.plist */ = {isa = PBXFileReference; path = "LotR LCG Scorer-Info.plist"; sourceTree = "<group>"; };
+		8F13044C15948EC400D76547 /* LotR LCG Scorer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LotR LCG Scorer-Info.plist"; sourceTree = "<group>"; };
 		8F13044E15948EC400D76547 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8F13045015948EC400D76547 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8F13045215948EC400D76547 /* LotR LCG Scorer-Prefix.pch */ = {isa = PBXFileReference; path = "LotR LCG Scorer-Prefix.pch"; sourceTree = "<group>"; };
+		8F13045215948EC400D76547 /* LotR LCG Scorer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LotR LCG Scorer-Prefix.pch"; sourceTree = "<group>"; };
 		8F13045315948EC400D76547 /* Cordova.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cordova.framework; path = /Users/Shared/Cordova/Frameworks/Cordova.framework; sourceTree = "<absolute>"; };
 		8F13045815948EC400D76547 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8F13045C15948EC400D76547 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = Resources/es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -70,13 +71,14 @@
 		8F13047015948EC400D76547 /* Default@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x~iphone.png"; path = "Resources/splash/Default@2x~iphone.png"; sourceTree = "<group>"; };
 		8F13047215948EC400D76547 /* Capture.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Capture.bundle; path = Resources/Capture.bundle; sourceTree = "<group>"; };
 		8F13047415948EC400D76547 /* Cordova.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Cordova.plist; sourceTree = "<group>"; };
-		8F13047715948EC400D76547 /* AppDelegate.h */ = {isa = PBXFileReference; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
+		8F13047715948EC400D76547 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		8F13047815948EC400D76547 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
-		8F13047A15948EC400D76547 /* MainViewController.h */ = {isa = PBXFileReference; name = MainViewController.h; path = Classes/MainViewController.h; sourceTree = "<group>"; };
+		8F13047A15948EC400D76547 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Classes/MainViewController.h; sourceTree = "<group>"; };
 		8F13047B15948EC400D76547 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Classes/MainViewController.m; sourceTree = "<group>"; };
 		8F13047D15948EC400D76547 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainViewController.xib; path = Classes/MainViewController.xib; sourceTree = "<group>"; };
-		8F13048015948EC400D76547 /* README */ = {isa = PBXFileReference; name = README; path = Plugins/README; sourceTree = "<group>"; };
-		8F13048115948EC400D76547 /* verify.sh */ = {isa = PBXFileReference; path = verify.sh; sourceTree = "<group>"; };
+		8F13048015948EC400D76547 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; name = README; path = Plugins/README; sourceTree = "<group>"; };
+		8F13048115948EC400D76547 /* verify.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = verify.sh; sourceTree = "<group>"; };
+		8F13048715948EF200D76547 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		8F13041E15948EC400D76547 = {
 			isa = PBXGroup;
 			children = (
+				8F13048715948EF200D76547 /* www */,
 				8F13044A15948EC400D76547 /* LotR LCG Scorer */,
 				8F13042F15948EC400D76547 /* Frameworks */,
 				8F13042D15948EC400D76547 /* Products */,
@@ -327,6 +330,7 @@
 				8F13047315948EC400D76547 /* Capture.bundle in Resources */,
 				8F13047515948EC400D76547 /* Cordova.plist in Resources */,
 				8F13047E15948EC400D76547 /* MainViewController.xib in Resources */,
+				8F13048815948EF200D76547 /* www in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
