@@ -16,10 +16,11 @@ except IOError:
 import web
 urls = (
       '/.*', 'hello',
+      '/', 'hello'
       )
  
 class hello:
-    def GET(self):
+    def get(self):
         return "Hello, world."
 
 
