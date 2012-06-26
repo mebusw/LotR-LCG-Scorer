@@ -6,6 +6,5 @@ setup(name='YourAppName',
       author='mebusw',
       author_email='mebusw@163.com',
       url='http://www.python.org/sigs/distutils-sig/',
-#      install_requires=['Django>=1.3'],
-      install_requires=['web.py>=0.36'],
+      install_requires=['Django>=1.3'],
      )
