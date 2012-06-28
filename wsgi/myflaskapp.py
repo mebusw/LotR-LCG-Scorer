@@ -3,10 +3,6 @@
 from flask import Flask
 app = Flask(__name__)
 
-@app.route("/debug")
-def debug():
-    raise
-    return "Debugging Flask..."
 
 @app.route("/")
 def hello():
