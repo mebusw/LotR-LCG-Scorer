@@ -10,4 +10,4 @@ try:
 except IOError:
     pass
 
-from twtapp import application
+from myflaskapp import app as application
