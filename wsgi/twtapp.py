@@ -266,6 +266,13 @@ def static_file(filename):
                    root= os.path.join(os.environ['OPENSHIFT_GEAR_DIR'],
                                       'repo/wsgi/static/'))
 
+@bottle.route('/scorer/:path')
+def scorer_file(path):
+    bottle.send_file(path,
+                     root= os.path.join(os.environ['OPENSHIFT_GEAR_DIR'],
+                                        'repo/wsgi/static/lotr-scorer'))
+
+
 @bottle.route('/stream')
 def stream():
     yield 'START'

@@ -8,6 +8,8 @@ import bottle
 import time
 import simplejson as json
 
+from bottle import route, request, response
+
 bottle.debug(True)
 
 
@@ -18,37 +20,45 @@ bottle.debug(True)
 #
 #################################
 
-@bottle.route('/tournaments/', method='GET')
+@route('/tournaments/', method='GET')
 def tournaments_index():
-    return json.dumps(['tournaments', 'index', [u'baz', None, 1.0, 2]])
+    #query var
+    page = request.query.page or '1'
+    
+    return json.dumps(['tournaments', 'index', [u'baz', None, 1.0, 2, {u'page': page}]])
 
-@bottle.route('/tournaments/<tid:int>', method='GET')
+
+@route('/tournaments/<tid>', method='GET')
 def tournaments_show(tid):
     return json.dumps(['tournaments', 'show', {'tid': tid}, [u'baz', None, 1.0, 2]])
 
-@bottle.route('/tournaments/<tid>', method='POST')
+
+@route('/tournaments/<tid>', method='POST')
 def tournaments_publish(tid):
-    return json.dumps(['tournaments', 'publish', {'tid': tid}, [u'baz', None, 1.0, 2]])
+    #form fields
+    name = request.forms.get('name')
+    
+    return json.dumps(['tournaments', 'publish', {'tid': tid}, [u'baz', None, 1.0, 2, {'name': name}]])
 
 
 
-@bottle.route('/tournaments/<tid>/participants', method='GET')
+@route('/tournaments/<tid>/participants', method='GET')
 def participants_index(tid):
     return json.dumps(['participants', 'index', {'tid': tid}, [u'baz', None, 1.0, 2]])
 
-@bottle.route('/tournaments/<tid>/participants/<pid>', method='PUT')
+@route('/tournaments/<tid>/participants/<pid>', method='PUT')
 def participants_update(tid, pid):
     return json.dumps(['participants', 'update', {'tid': tid}, {'pid': pid}, [u'baz', None, 1.0, 2]])
 
 
-#@bottle.route('/static/<filename>')
-#def server_static(filename):
-#    return bottle.static_file(filename, root='/Users/mebusw/Desktop/lotr-cloud/lotr/wsgi/static')
+@route('/static/<filename>')
+def server_static(filename):
+    return bottle.static_file(filename, root='/Users/mebusw/Desktop/lotr-cloud/lotr/wsgi/static')
 
-@bottle.route('/scorer/<path:path>')
+@route('/scorer/<path:path>')
 def server_static(path):
     return bottle.static_file(path, root='/Users/mebusw/Desktop/lotr-cloud/lotr/wsgi/static/lotr-scorer')
-
+    #root= os.path.join(os.environ['OPENSHIFT_GEAR_DIR'],        'repo/wsgi/static/')
 
 if __name__ == '__main__':
     bottle.default_app()
