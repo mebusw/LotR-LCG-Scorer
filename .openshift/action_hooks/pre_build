@@ -3,5 +3,5 @@
 # available.  Otherwise it will execute while your application is stopped
 # before the build step.  This script gets executed directly, so it
 # could be python, php, ruby, etc.
-python test_twtapp.py
+python wsgi/test_twtapp.py
 
