@@ -99,7 +99,7 @@ def tournaments_index():
 
 @bottle.route('/tournaments/<tid>', method='GET')
 def tournaments_show(tid):
-    return [u'show', u'tid': tid, {u'bar': [u'baz', None, 1.0, 2]}]
+    return [u'show', {u'tid': tid}, {u'bar': [u'baz', None, 1.0, 2]}]
 
 
 @bottle.route('/home')
