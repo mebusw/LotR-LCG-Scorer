@@ -51,14 +51,10 @@ def participants_update(tid, pid):
     return json.dumps(['participants', 'update', {'tid': tid}, {'pid': pid}, [u'baz', None, 1.0, 2]])
 
 
-@route('/static/<filename>')
+@route('/static/<filename:path>')
 def server_static(filename):
     return bottle.static_file(filename, root='/Users/mebusw/Desktop/lotr-cloud/lotr/wsgi/static')
 
-@route('/scorer/<path:path>')
-def server_static(path):
-    return bottle.static_file(path, root='/Users/mebusw/Desktop/lotr-cloud/lotr/wsgi/static/lotr-scorer')
-    #root= os.path.join(os.environ['OPENSHIFT_GEAR_DIR'],        'repo/wsgi/static/')
 
 if __name__ == '__main__':
     bottle.default_app()
