@@ -266,7 +266,7 @@ def static_file(filename):
                    root= os.path.join(os.environ['OPENSHIFT_GEAR_DIR'],
                                       'repo/wsgi/static/'))
 
-@route('/stream')
+@bottle.route('/stream')
 def stream():
     yield 'START'
     time.sleep(3)
