@@ -11,3 +11,4 @@ except IOError:
     pass
 
 from twtapp import application
+from chanlloge import *

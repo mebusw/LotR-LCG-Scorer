@@ -1,5 +1,6 @@
 import random
 import unittest
+import simplejson as json
 
 class TestSequenceFunctions(unittest.TestCase):
 
@@ -26,5 +27,12 @@ class TestSequenceFunctions(unittest.TestCase):
         for element in random.sample(self.seq, 5):
             self.assertTrue(element in self.seq)
 
+    def test_json(self):
+        obj = [u'foo', {u'bar': [u'baz', None, 1.0, 2]}]
+        s = '["foo", {"bar": ["baz", null, 1.0, 2]}]'
+        self.assertEqual(s, json.dumps(obj))
+        self.assertEqual(obj, json.loads(s))
+
 if __name__ == '__main__':
     unittest.main()
+
