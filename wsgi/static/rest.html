@@ -1,0 +1,30 @@
+<html>
+    
+<script src='jquery-1.7.2.min.js'></script>
+<script>
+    $.ajax({
+           url: '/tournaments/55/participants/66',
+           type: 'put',
+           success: function(response) {
+                $('#result').append(response);
+           }
+           
+    });
+    
+    $.ajax({
+           url: '/tournaments/44',
+           type: 'post',
+           data: {name: 'world cup'},
+           success: function(response) {
+           $('#result').append(response);
+           }
+           
+    });
+</script>
+    
+<body>
+    
+<div id='result'>===</div>
+
+</body>
+</html>
