@@ -33,7 +33,7 @@ def tournaments_index():
     cds = cursor.fetchall()
     print cds
     
-    return json.dumps(['package', 'index', [u'baz', None, 1.0, 2, {u'page': page}], str(cds)])
+    return json.dumps(['package', 'index', [u'baz', None, 1.0, 2, {u'page': page}], str(cds)], [cds[1][1], cds[1][2]])
 
 
 
