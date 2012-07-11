@@ -13,7 +13,7 @@ from bottle import route, request, response
 
 bottle.debug(True)
 
-mysql_con = MySQLdb.connect(host=os.environ['OPENSHIFT_DB_HOST'], port=int(os.environ['OPENSHIFT_DB_PORT']), user=os.environ['OPENSHIFT_DB_USERNAME'],passwd=os.environ['OPENSHIFT_DB_PASSWORD'], db=os.environ['OPENSHIFT_APP_NAME'])
+conn = MySQLdb.connect(host=os.environ['OPENSHIFT_DB_HOST'], port=int(os.environ['OPENSHIFT_DB_PORT']), user=os.environ['OPENSHIFT_DB_USERNAME'],passwd=os.environ['OPENSHIFT_DB_PASSWORD'], db=os.environ['OPENSHIFT_APP_NAME'])
 
 
 #################################
@@ -27,7 +27,13 @@ def tournaments_index():
     #query var
     page = request.query.page or '1'
     
-    return json.dumps(['package', 'index', [u'baz', None, 1.0, 2, {u'page': page}]])
+    sql = 'SELECT * from package'
+    cursor = conn.cursor()
+    cursor.execute(sql)
+    cds = cursor.fetchall()
+    print cds
+    
+    return json.dumps(['package', 'index', [u'baz', None, 1.0, 2, {u'page': page}], str(cds)])
 
 
 
