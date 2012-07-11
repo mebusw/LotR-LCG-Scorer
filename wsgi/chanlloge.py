@@ -48,12 +48,13 @@ def participants_index(tid):
 
 @route('/tournaments/<tid>/participants/<pid>', method='PUT')
 def participants_update(tid, pid):
-    return json.dumps(['participants', 'update', {'tid': tid}, {'pid': pid}, [u'baz', None, 1.0, 2]])
+    name = request.forms.get('name')
+    return json.dumps(['participants', 'update', {'tid': tid}, {'pid': pid}, [u'baz', None, 1.0, 2, {'name': name}]])
 
 
 @route('/static/<filename:path>')
 def server_static(filename):
-    return bottle.static_file(filename, root='/Users/mebusw/Desktop/lotr-cloud/lotr/wsgi/static')
+    return bottle.static_file(filename, root='./wsgi/static')
 
 
 if __name__ == '__main__':
