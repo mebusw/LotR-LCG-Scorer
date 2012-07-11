@@ -11,5 +11,6 @@ except IOError:
     pass
 
 from chanlloge import *
+from lotrapi import *
 from twtapp import application
 

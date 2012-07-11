@@ -7,6 +7,6 @@ setup(name='OpenShift Mongo Twt',
       author_email='mebusw@163.com',
       url='https://github.com/openshift/openshift-twt-mongo-demo',
       # dont install bottle requirement, bottle is included in source
-      install_requires=['pymongo', 'Flask>=0.7.2', 'simplejson'],
+      install_requires=['MySQL-python', 'pymongo', 'Flask>=0.7.2', 'simplejson'],
       test_suite='tst',
      )
