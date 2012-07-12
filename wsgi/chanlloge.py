@@ -25,7 +25,7 @@ def tournaments_index():
     #query var
     page = request.query.page or '1'
     
-    return json.dumps(['tournaments', 'index', [u'utf8', u"\u8ffd\u8e2a\u5495\u565c", None, 1.0, 2, {u'page': page}]], ensure_ascii=False)
+    return json.dumps(['tournaments', 'index', [u'utf8', "魔戒", u"\u8ffd\u8e2a\u5495\u565c", None, 1.0, 2, {u'page': page}]], ensure_ascii=False)
 
 
 @route('/tournaments/<tid>', method='GET')

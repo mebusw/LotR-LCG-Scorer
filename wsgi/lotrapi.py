@@ -23,7 +23,7 @@ conn = MySQLdb.connect(host=os.environ['OPENSHIFT_DB_HOST'], port=int(os.environ
 #################################
 
 @route('/packages', method='GET')
-def tournaments_index():
+def packages_index():
     #query var
     page = request.query.page or '1'
     
@@ -36,7 +36,18 @@ def tournaments_index():
     return json.dumps(['package', 'index', [u'baz', None, 1.0, 2, {u'page': page}], str(cds), '>>>', [cds[1][1], cds[1][2]]], ensure_ascii=False)
 
 
-
+@route('/packages/<pid>', method='GET')
+def packages_show():
+    #query var
+    page = request.query.page or '1'
+    
+    sql = 'SELECT * from package where id=%s' % pid
+    cursor = conn.cursor()
+    cursor.execute(sql)
+    cds = cursor.fetchall()
+    print cds
+    
+    return json.dumps(['package', 'show', {'pid': pid}, [u'baz', None, 1.0, 2, {u'page': page}], str(cds), '>>>', [cds[1][1], cds[1][2]]], ensure_ascii=False)
 
 @route('/static/<filename:path>')
 def server_static(filename):
