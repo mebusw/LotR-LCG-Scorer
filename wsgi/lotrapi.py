@@ -35,7 +35,7 @@ def packages_index():
     
     r = ['package', 'index', {'page': page}, []]
     for c in cds:
-        a = c[0:4]
+        a = list(c[0:4])
         a.append(unicode(c[4]))
         r[3].append(a)
             
@@ -54,7 +54,7 @@ def packages_show(pid):
     cds = cursor.fetchall()
     print cds
     
-    return json.dumps(['package', 'show', {'pid': pid}, [u'baz', None, 1.0, 2, {u'page': page}], unicode(cds), '>>>'], ensure_ascii=False)
+    return json.dumps(['package', 'show', {'pid': pid}, [u'baz', None, 1.0, 2, {u'page': page}], unicode(cds), '>>>', cds[0][1]], ensure_ascii=False)
 
 @route('/static/<filename:path>')
 def server_static(filename):
