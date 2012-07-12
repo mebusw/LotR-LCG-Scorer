@@ -33,7 +33,14 @@ def packages_index():
     cds = cursor.fetchall()
     print cds
     
-    return json.dumps(['package', 'index', [u'baz', None, 1.0, 2, {u'page': page}], cds, '>>>', [cds[1][1], cds[1][2]]], ensure_ascii=False)
+    r = ['package', 'index', {'page': page}, []]
+    for c in cds:
+        a = c[0:4]
+        a.append(unicode(c[4]))
+        r[3].append(a)
+            
+    
+    return json.dumps(r, ensure_ascii=False)
 
 
 @route('/packages/<pid>', method='GET')
@@ -47,7 +54,7 @@ def packages_show(pid):
     cds = cursor.fetchall()
     print cds
     
-    return json.dumps(['package', 'show', {'pid': pid}, [u'baz', None, 1.0, 2, {u'page': page}], cds, '>>>', [cds[1][1], cds[1][2]]], ensure_ascii=False)
+    return json.dumps(['package', 'show', {'pid': pid}, [u'baz', None, 1.0, 2, {u'page': page}], unicode(cds), '>>>'], ensure_ascii=False)
 
 @route('/static/<filename:path>')
 def server_static(filename):
