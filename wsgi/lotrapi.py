@@ -14,7 +14,8 @@ from bottle import route, request, response
 bottle.debug(True)
 
 conn = MySQLdb.connect(host=os.environ['OPENSHIFT_DB_HOST'], port=int(os.environ['OPENSHIFT_DB_PORT']), user=os.environ['OPENSHIFT_DB_USERNAME'],passwd=os.environ['OPENSHIFT_DB_PASSWORD'], db=os.environ['OPENSHIFT_APP_NAME'], charset="utf8")
-
+conn.ping(True)
+cursor = conn.cursor()
 
 #################################
 # RESTful API Methods of LOTR!
@@ -28,7 +29,6 @@ def packages_index():
     page = request.query.page or '1'
     
     sql = 'SELECT * from package'
-    cursor = conn.cursor()
     cursor.execute(sql)
     cds = cursor.fetchall()
     print cds
@@ -49,7 +49,6 @@ def packages_show(pid):
     page = request.query.page or '1'
     
     sql = 'SELECT * from package where id=%s' % pid
-    cursor = conn.cursor()
     cursor.execute(sql)
     cds = cursor.fetchall()
     print cds
