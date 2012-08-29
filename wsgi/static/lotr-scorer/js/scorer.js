@@ -2,11 +2,7 @@ var MyApp = Em.Application.create({
     ready: function() {
         console.log('DOM ready');
         console.log($('#jj').html());
-        console.log($('#main').html());
-        $.get('todolist.js', function(data) {
-            //console.log(data);
-        });
-                                  
+
         document.addEventListener("deviceready", onDeviceReady, false);
 
     }
@@ -24,30 +20,26 @@ function onDeviceReady()
 
 MyApp.scorerController = Em.Object.create({
     players: [
-        Em.Object.create({name:'Tom', threatLevel:30, deadHeroTC:0, livingHeroDT:0}),
-        Em.Object.create({name:'Alice', threatLevel:40, deadHeroTC:0, livingHeroDT:0})
+        Em.Object.create({name:'Saron', threatLevel:30, deadHeroTC:0, livingHeroDT:0}),
+        Em.Object.create({name:'Bilbo', threatLevel:40, deadHeroTC:0, livingHeroDT:0})
     ],
     rounds: 1,
     earnedVP: 0,
     
     finalScore: function() {
+        console.log('finalScore ' + this.get('rounds') + this);
+    
         var players = this.get('players');
         var sum = 0;
         for (var i = 0; i < players.length; i++) {
             sum += parseInt(players[i].get('threatLevel')) + parseInt(players[i].get('deadHeroTC')) + parseInt(players[i].get('livingHeroDT'));
             //players.objectAt()
         }
+        
         sum += this.get('rounds') * 10 - this.get('earnedVP');
         return  sum;
         //return todos.filterProperty('isDone', false).get('length');
     }.property('players.@each.threatLevel', 'players.@each.deadHeroTC', 'players.@each.livingHeroDT', 'rounds', 'earnedVP'),
-    
-    addOne: function() {
-        console.log('addone');
-        var newPlayer = Em.Object.create({name:'Bob', threatLevel:20, deadHeroTC:0, livingHeroDT:0});
-        this.get('players').push(newPlayer);
-        console.log(this.get('players'));
-    }
 
 });
 
@@ -58,7 +50,7 @@ MyApp.scorerController.addObserver('players.@each.threatLevel', function() {
 MyApp.ScorerView = Em.View.extend({
   add: function() {
     console.log('adding');
-    var newPlayer = Em.Object.create({name:'Bob', threatLevel:20, deadHeroTC:0, livingHeroDT:0});
+    var newPlayer = Em.Object.create({name:'Gollum', threatLevel:20, deadHeroTC:0, livingHeroDT:0});
     MyApp.scorerController.get('players').pushObject(newPlayer);
     console.log('added');
     
@@ -88,7 +80,6 @@ MyApp.myText = Em.TextField.extend({
 
 MyApp.finalScore = MyApp.scorerController.get('finalScore');
 console.log(MyApp.finalScore);
-
 
 
 

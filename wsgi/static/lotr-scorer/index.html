@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="generator" content="HTML Tidy for Windows (vers 14 February 2006), see www.w3.org">
+    <meta name="generator" content=
+    "HTML Tidy for Windows (vers 14 February 2006), see www.w3.org">
     <meta charset="utf-8">
     <title>
       LotR, Scorer
@@ -15,90 +16,82 @@ body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
       }
     </style>
-    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet" type=
+    "text/css"><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href=
+    "assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href=
+    "assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href=
+    "assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href=
+    "assets/ico/apple-touch-icon-57-precomposed.png">
   </head>
   <body>
-    <div class="navbar navbar-fixed-top">
+    <nav class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"></a> <a class="brand" href="#">LotR Scorer</a>
-          <div class="nav-collapse">
-            <ul class="nav">
-              <li class="active">
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#about" data-toggle="modal">About</a>
-              </li>
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
-              <li>
-                <form class="navbar-search pull-left">
-                  <input type="text" class="search-query" placeholder="Search">
-                </form>
-              </li>
-            </ul>
-          </div><!--/.nav-collapse -->
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=
+          ".nav-collapse"></a> 
+          <a class="brand" href="#">LotR Scorer</a>
+          <a class="brand" href="#about" data-toggle="modal">About</a>          
         </div>
       </div>
-    </div>
+    </nav>
+    
     <div class="container-fluid">
       <h1>
         LotR Scorer
       </h1>
-      <p>
-        Use this document as a way to quick start any new project.<br>
-        All you get is this message and a barebones HTML document.
-      </p>
-        <div id='jj' class="hide span4 offset4">
-            <div class="alert">
-                <button class="close" data-dismiss="alert">X</button> <strong>Warning!</strong> Cordova is working!
-            </div>
-        </div>  
-        
-      <div class="modal hide fade" id="about" >
+
+      <div class="modal hide fade" id="about">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">X</button>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h3>
-            Login
+            About LotR LCG
           </h3>
         </div>
         <div class="modal-body">
           <p>
-            One fine body…
+            The Lord of the Rings: The Card Game is a cooperative adventure game in which the players attempt to complete a scenario, each with three heroes of their choice and a deck of allies, events and attachments to support them. Each round, players send their heroes and allies to quest or to fight with enemies that engage them. However, as the heroes and allies exhaust after questing, defending, or attacking, the players' options are typically insufficient to deal with everything at once. Therefore, players need to determine whether it is more urgent to quest and make progress in the scenario while the enemy forces gain power, or to take down enemies while making no progress, not knowing what will come next.
           </p>
+          <img src='title.png' />
         </div>
         <div class="modal-footer">
-          <a href="#" class="btn" data-dismiss="modal">Close</a> <a href="#" class="btn btn-primary">Save changes</a>
+          <a href="#" class="btn btn-primary" data-dismiss="modal">OK</a>
         </div>
       </div>
-        
-    <script type="text/x-handlebars">
+
+      <p>
+        Use this document as a way to quick start any new project.<br>
+        All you get is this message and a barebones HTML document.
+      </p>
+      <div id='jj' class="hide span4 offset4">
+        <div class="alert">
+          <button class="close" data-dismiss="alert">X</button>
+          <strong>Warning!</strong> Cordova is working!
+        </div>
+      </div>
+
+      
+      <script type="text/x-handlebars">
 
         <div id='main'>
         {{#view MyApp.ScorerView}}
-          <h2>FinalScore: <span class="badge badge-warning">{{MyApp.scorerController.finalScore}}</span></h2>
+          <h2>Final Group Score: <span class="badge badge-warning"> {{MyApp.scorerController.finalScore}}</span></h2>
 
           <div class="row">
-          <div class="span8">
-            Players<a class="btn btn-info" {{action "add"}}><i class="icon-plus icon-white"></i>Add</a>
-            <div class="row show-grid">
-              <div class="span2">name</div>
-              <div class="span2">threatLevel</div>
-              <div class="span2">deadHeroTC</div>
-              <div class="span2">livingHeroDT</div>
-            </div>
-          </div>
+          <div class="span9">
+            <a class="btn btn-info" {{action "add"}}><i class="icon-plus icon-white"></i>Add Player</a>
+           <div class="span2">*Rounds: {{view MyApp.myText name="rounds" valueBinding="MyApp.scorerController.rounds"  class="span1"}}</div>
+           <div class="span2">VP Earned {{view MyApp.myText name="earnedVP" valueBinding="MyApp.scorerController.earnedVP"  class="span1"}}</div>
+
+           </div>
         </div>
           
             <div class="row">
@@ -106,31 +99,123 @@ body {
               {{#each MyApp.scorerController.players}}
                     <div class="row show-grid">
                     <button class="close" {{action "remove"}}>&times;</button>
-                    <div class="span2"><label><i class="icon-user "></i>{{name}}</label></div>
-                    <div class="span2">{{view MyApp.myText name="threatLevel" valueBinding="threatLevel" class="span1"}}</div>
-                        <div class="span2">{{view MyApp.myText name="deadHeroTC" valueBinding="deadHeroTC"  class="span1"}}  </div>
-                       <div class="span2">{{view MyApp.myText name="livingHeroDT" valueBinding="livingHeroDT"  class="span1"}} </div>
+                    <div class="span1"><label><i class="icon-user "></i>{{name}}</label></div>
+                    <div class="span2">Final Threat Level {{view MyApp.myText name="threatLevel" valueBinding="threatLevel" class="span1"}}</div>
+                        <div class="span2">Thread cost of Dead Heroes {{view MyApp.myText name="deadHeroTC" valueBinding="deadHeroTC"  class="span1"}}  </div>
+                       <div class="span3">Damage Tokens on Remaining Heroes {{view MyApp.myText name="livingHeroDT" valueBinding="livingHeroDT"  class="span3"}} </div>
+                       <div class="span3">Date: <input type="date" required="required" /> Number: <input type="number" placeholder="123"/></div>
+                       <div class="span3"> 
+                           <select name="v_quest" id="v_quest" class="r_contenedor_formulario_combo" style="width:468px;">
+                            <option value="0" selected>Select Quest</option>
+
+                           <option value="8">A Journey to Rhosgobel</option>
+
+                            <option value="6">Conflict at the Carrock</option>
+
+                            <option value="3">Escape from Dol Guldur</option>
+
+                            <option value="14">Flight from Moria</option>
+
+                            <option value="20">Foundations of Stone</option>
+
+                            <option value="15">Into the Pit</option>
+
+                            <option value="4">Journey Down the Anduin</option>
+
+                            <option value="1">Passage Through Mirkwood</option>
+
+                            <option value="11">Return to Mirkwood</option>
+
+                            <option value="17">Road to Rivendell</option>
+
+                            <option value="10">The Dead Marshes</option>
+
+                            <option value="9">The Hills of Emyn Muil</option>
+
+                            <option value="5">The Hunt for Gollum</option>
+
+                            <option value="19">The Long Dark</option>
+
+                            <option value="7">The Massing at Osgiliath</option>
+
+                            <option value="16">The Redhorn Gate</option>
+
+                            <option value="13">The Seventh Level</option>
+
+                            <option value="18">The Watcher in the Water</option>
+                          <select> 
+                          <select name="v_quest" id="v_quest" class="r_contenedor_formulario_combo" style="width:468px;">
+                                <option value="0" selected>Select Hero</option>
+                                <option value="2" >&Eacute;owyn</option>
+                                <option value="5" >Aragorn (Core Set)</option>
+
+                                <option value="24" >Aragorn (The Watcher in the Water)</option>
+
+                                <option value="13" >Beravor</option>
+
+                                <option value="21" >Bifur</option>
+
+                                <option value="14" >Bilbo Baggins</option>
+
+                                <option value="18" >Boromir</option>
+
+                                <option value="17" >Brand son of Bain</option>
+
+                                <option value="19" >D&aacute;in Ironfoot</option>
+
+                                <option value="4" >D&uacute;nhere</option>
+
+                                <option value="11" >Denethor</option>
+
+                                <option value="20" >Dwalin</option>
+
+                                <option value="3" >Eleanor</option>
+
+                                <option value="22" >Elrohir</option>
+
+                                <option value="23" >Elladan</option>
+
+                                <option value="15" >Frodo Baggins</option>
+
+                                <option value="10" >Gimli</option>
+
+                                <option value="7" >Gl&oacute;in</option>
+
+                                <option value="12" >Glorfindel (Core Set)</option>
+
+                                <option value="26" >Glorfindel (Foundations of Stone)</option>
+
+                                <option value="25" >H&aacute;ma</option>
+
+                                <option value="9" >Legolas</option>
+
+                                <option value="16" >Prince Imrahil</option>
+
+                                <option value="6" >Th&eacute;odred</option>
+
+                                <option value="8" >Thalin</option>
+                          <select> 
+                       
+                       
+                       </div>
                 </div>                        
               {{/each}}
               </div>
               </div>
             
-            <span>Rounds:</span>{{view MyApp.myText name="rounds" valueBinding="MyApp.scorerController.rounds"  class="span2"}}
-            <span>VPs:</span>{{view MyApp.myText name="earnedVP" valueBinding="MyApp.scorerController.earnedVP"  class="span2"}}
             
         {{/view}}
         </div>
       </script>
-      <pre class="prettyprint linenums">
-  &lt;p&gt;Sample text here...&lt;/p&gt;
-</pre>
+
       <div>
         <ul class="nav nav-pills">
           <li class="active">
             <a href="#">Regular link</a>
           </li>
           <li class="dropdown" id="menu1">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">Dropdown</a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href=
+            "#menu1">Dropdown</a>
             <ul class="dropdown-menu">
               <li>
                 <a href="#">Action</a>
@@ -148,18 +233,18 @@ body {
           </li>
         </ul>
       </div>
-
       <div class="progress progress-striped active">
         <div class="bar" style="width: 40%;"></div>
-      </div><a class="btn" href="#">View details �</a>
+      </div>
     </div><!-- /container -->
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-<script type="text/javascript" charset="utf-8" src="js/libs/cordova-1.8.1.js"></script>
-
-    <script src="js/libs/jquery-1.7.2.min.js" type="text/javascript">
-</script><script src="assets/js/bootstrap-transition.js" type="text/javascript">
+    <script type="text/javascript" charset="utf-8" src=
+    "js/lib/cordova-1.8.1.js">
+</script><script src="js/lib/jquery-1.7.2.min.js" type="text/javascript">
+</script><script src="assets/js/bootstrap-transition.js" type=
+"text/javascript">
 </script><script src="assets/js/bootstrap-alert.js" type="text/javascript">
 </script><script src="assets/js/bootstrap-modal.js" type="text/javascript">
 </script><script src="assets/js/bootstrap-dropdown.js" type="text/javascript">
@@ -171,8 +256,7 @@ body {
 </script><script src="assets/js/bootstrap-collapse.js" type="text/javascript">
 </script><script src="assets/js/bootstrap-carousel.js" type="text/javascript">
 </script><script src="assets/js/bootstrap-typeahead.js" type="text/javascript">
-</script><script src="js/libs/ember-0.9.7.1.min.js" type="text/javascript">
-    
+</script><script src="js/lib/ember-0.9.7.1.min.js" type="text/javascript">
 </script><script src="js/scorer.js" type="text/javascript">
 </script>
   </body>
