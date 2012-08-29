@@ -57,9 +57,9 @@ body {
           </h3>
         </div>
         <div class="modal-body">
-          <p>
+          <article>
             The Lord of the Rings: The Card Game is a cooperative adventure game in which the players attempt to complete a scenario, each with three heroes of their choice and a deck of allies, events and attachments to support them. Each round, players send their heroes and allies to quest or to fight with enemies that engage them. However, as the heroes and allies exhaust after questing, defending, or attacking, the players' options are typically insufficient to deal with everything at once. Therefore, players need to determine whether it is more urgent to quest and make progress in the scenario while the enemy forces gain power, or to take down enemies while making no progress, not knowing what will come next.
-          </p>
+          </article>
           <img src='title.png' />
         </div>
         <div class="modal-footer">
@@ -85,120 +85,84 @@ body {
         {{#view MyApp.ScorerView}}
           <h2>Final Group Score: <span class="badge badge-warning"> {{MyApp.scorerController.finalScore}}</span></h2>
 
-          <div class="row">
-          <div class="span9">
-            <a class="btn btn-info" {{action "add"}}><i class="icon-plus icon-white"></i>Add Player</a>
-           <div class="span2">*Rounds: {{view MyApp.myText name="rounds" valueBinding="MyApp.scorerController.rounds"  class="span1"}}</div>
-           <div class="span2">VP Earned {{view MyApp.myText name="earnedVP" valueBinding="MyApp.scorerController.earnedVP"  class="span1"}}</div>
 
-           </div>
-        </div>
-          
             <div class="row">
-            <div class="span9">
+            <div class="span12 well">
+                  <div class="row">
+                  <div class="span2"><a class="btn btn-info" {{action "add"}}><i class="icon-plus icon-white"></i>Add Player</a></div>
+                   <div class="span2">*Rounds: {{view MyApp.myText name="rounds" valueBinding="MyApp.scorerController.rounds" type="number" placeholder="123"  class="span1"}}</div>
+                   <div class="span2">VP Earned {{view MyApp.myText name="earnedVP" valueBinding="MyApp.scorerController.earnedVP" class="span1"}}</div>
+                   <div class="span2">Date: <input type="date" required="required"  class="span1"/></div>
+                  </div>
+            </div>
+            </div>
+         
+            <div class="row">
+            <div class="span12">
               {{#each MyApp.scorerController.players}}
+                   <form class="well">
                     <div class="row show-grid">
                     <button class="close" {{action "remove"}}>&times;</button>
                     <div class="span1"><label><i class="icon-user "></i>{{name}}</label></div>
                     <div class="span2">Final Threat Level {{view MyApp.myText name="threatLevel" valueBinding="threatLevel" class="span1"}}</div>
-                        <div class="span2">Thread cost of Dead Heroes {{view MyApp.myText name="deadHeroTC" valueBinding="deadHeroTC"  class="span1"}}  </div>
-                       <div class="span3">Damage Tokens on Remaining Heroes {{view MyApp.myText name="livingHeroDT" valueBinding="livingHeroDT"  class="span3"}} </div>
-                       <div class="span3">Date: <input type="date" required="required" /> Number: <input type="number" placeholder="123"/></div>
-                       <div class="span3"> 
-                           <select name="v_quest" id="v_quest" class="r_contenedor_formulario_combo" style="width:468px;">
-                            <option value="0" selected>Select Quest</option>
-
-                           <option value="8">A Journey to Rhosgobel</option>
-
-                            <option value="6">Conflict at the Carrock</option>
-
-                            <option value="3">Escape from Dol Guldur</option>
-
-                            <option value="14">Flight from Moria</option>
-
-                            <option value="20">Foundations of Stone</option>
-
-                            <option value="15">Into the Pit</option>
-
-                            <option value="4">Journey Down the Anduin</option>
-
-                            <option value="1">Passage Through Mirkwood</option>
-
-                            <option value="11">Return to Mirkwood</option>
-
-                            <option value="17">Road to Rivendell</option>
-
-                            <option value="10">The Dead Marshes</option>
-
-                            <option value="9">The Hills of Emyn Muil</option>
-
-                            <option value="5">The Hunt for Gollum</option>
-
-                            <option value="19">The Long Dark</option>
-
-                            <option value="7">The Massing at Osgiliath</option>
-
-                            <option value="16">The Redhorn Gate</option>
-
-                            <option value="13">The Seventh Level</option>
-
-                            <option value="18">The Watcher in the Water</option>
-                          <select> 
-                          <select name="v_quest" id="v_quest" class="r_contenedor_formulario_combo" style="width:468px;">
-                                <option value="0" selected>Select Hero</option>
-                                <option value="2" >&Eacute;owyn</option>
-                                <option value="5" >Aragorn (Core Set)</option>
-
-                                <option value="24" >Aragorn (The Watcher in the Water)</option>
-
-                                <option value="13" >Beravor</option>
-
-                                <option value="21" >Bifur</option>
-
-                                <option value="14" >Bilbo Baggins</option>
-
-                                <option value="18" >Boromir</option>
-
-                                <option value="17" >Brand son of Bain</option>
-
-                                <option value="19" >D&aacute;in Ironfoot</option>
-
-                                <option value="4" >D&uacute;nhere</option>
-
-                                <option value="11" >Denethor</option>
-
-                                <option value="20" >Dwalin</option>
-
-                                <option value="3" >Eleanor</option>
-
-                                <option value="22" >Elrohir</option>
-
-                                <option value="23" >Elladan</option>
-
-                                <option value="15" >Frodo Baggins</option>
-
-                                <option value="10" >Gimli</option>
-
-                                <option value="7" >Gl&oacute;in</option>
-
-                                <option value="12" >Glorfindel (Core Set)</option>
-
-                                <option value="26" >Glorfindel (Foundations of Stone)</option>
-
-                                <option value="25" >H&aacute;ma</option>
-
-                                <option value="9" >Legolas</option>
-
-                                <option value="16" >Prince Imrahil</option>
-
-                                <option value="6" >Th&eacute;odred</option>
-
-                                <option value="8" >Thalin</option>
-                          <select> 
-                       
-                       
-                       </div>
-                </div>                        
+                    <div class="span2"> Thread cost of Dead Heroes {{view MyApp.myText name="deadHeroTC" valueBinding="deadHeroTC"  class="span1"}}  </div>
+                    <div class="span2"> Damage Tokens on Remaining Heroes {{view MyApp.myText name="livingHeroDT" valueBinding="livingHeroDT"  class="span1"}} </div>
+                    <div class="span2"> 
+                      <select name="v_quest" id="v_quest" class="span2" required="required"  >
+                        <option value="0" >Select Quest</option>
+                       <option value="8">A Journey to Rhosgobel</option>
+                        <option value="6">Conflict at the Carrock</option>
+                        <option value="3">Escape from Dol Guldur</option>
+                        <option value="14">Flight from Moria</option>
+                        <option value="20">Foundations of Stone</option>
+                        <option value="15">Into the Pit</option>
+                        <option value="4">Journey Down the Anduin</option>
+                        <option value="1">Passage Through Mirkwood</option>
+                        <option value="11">Return to Mirkwood</option>
+                        <option value="17">Road to Rivendell</option>
+                        <option value="10">The Dead Marshes</option>
+                        <option value="9">The Hills of Emyn Muil</option>
+                        <option value="5">The Hunt for Gollum</option>
+                        <option value="19">The Long Dark</option>
+                        <option value="7">The Massing at Osgiliath</option>
+                        <option value="16">The Redhorn Gate</option>
+                        <option value="13">The Seventh Level</option>
+                        <option value="18">The Watcher in the Water</option>
+                      </select> 
+                    </div> 
+                    <div class="span2"> 
+                      <select name="v_quest" id="v_quest" class="span2">
+                            <option value="0" selected>Select Hero</option>
+                            <option value="2" >&Eacute;owyn</option>
+                            <option value="5" >Aragorn (Core Set)</option>
+                            <option value="24" >Aragorn (The Watcher in the Water)</option>
+                            <option value="13" >Beravor</option>
+                            <option value="21" >Bifur</option>
+                            <option value="14" >Bilbo Baggins</option>
+                            <option value="18" >Boromir</option>
+                            <option value="17" >Brand son of Bain</option>
+                            <option value="19" >D&aacute;in Ironfoot</option>
+                            <option value="4" >D&uacute;nhere</option>
+                            <option value="11" >Denethor</option>
+                            <option value="20" >Dwalin</option>
+                            <option value="3" >Eleanor</option>
+                            <option value="22" >Elrohir</option>
+                            <option value="23" >Elladan</option>
+                            <option value="15" >Frodo Baggins</option>
+                            <option value="10" >Gimli</option>
+                            <option value="7" >Gl&oacute;in</option>
+                            <option value="12" >Glorfindel (Core Set)</option>
+                            <option value="26" >Glorfindel (Foundations of Stone)</option>
+                            <option value="25" >H&aacute;ma</option>
+                            <option value="9" >Legolas</option>
+                            <option value="16" >Prince Imrahil</option>
+                            <option value="6" >Th&eacute;odred</option>
+                            <option value="8" >Thalin</option>
+                      </select>
+                   </div>
+                </div>       
+              </form>
+                
               {{/each}}
               </div>
               </div>
