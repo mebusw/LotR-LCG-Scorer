@@ -83,30 +83,16 @@ body {
 
         <div id='main'>
         {{#view MyApp.ScorerView}}
-          <h2>Final Group Score: <span class="badge badge-warning"> {{MyApp.scorerController.finalScore}}</span></h2>
+          <h3>Final Group Score: <span class="badge badge-warning"> {{MyApp.scorerController.finalScore}}</span></h3>
 
 
             <div class="row">
             <div class="span12 well">
                   <div class="row">
                   <div class="span2"><a class="btn btn-info" {{action "add"}}><i class="icon-plus icon-white"></i>Add Player</a></div>
-                   <div class="span2">*Rounds: {{view MyApp.myText name="rounds" valueBinding="MyApp.scorerController.rounds" type="number" placeholder="123"  class="span1"}}</div>
-                   <div class="span2">VP Earned {{view MyApp.myText name="earnedVP" valueBinding="MyApp.scorerController.earnedVP" class="span1"}}</div>
+                   <div class="span2">*Rounds: {{view MyApp.myText name="rounds" valueBinding="MyApp.scorerController.rounds" type="number"  class="span1"}}</div>
+                   <div class="span2">VP Earned {{view MyApp.myText name="earnedVP" valueBinding="MyApp.scorerController.earnedVP" type="number" class="span1"}}</div>
                    <div class="span2">Date: <input type="date" required="required"  class="span1"/></div>
-                  </div>
-            </div>
-            </div>
-         
-            <div class="row">
-            <div class="span12">
-              {{#each MyApp.scorerController.players}}
-                   <form class="well">
-                    <div class="row show-grid">
-                    <button class="close" {{action "remove"}}>&times;</button>
-                    <div class="span1"><label><i class="icon-user "></i>{{name}}</label></div>
-                    <div class="span2">Final Threat Level {{view MyApp.myText name="threatLevel" valueBinding="threatLevel" class="span1"}}</div>
-                    <div class="span2"> Thread cost of Dead Heroes {{view MyApp.myText name="deadHeroTC" valueBinding="deadHeroTC"  class="span1"}}  </div>
-                    <div class="span2"> Damage Tokens on Remaining Heroes {{view MyApp.myText name="livingHeroDT" valueBinding="livingHeroDT"  class="span1"}} </div>
                     <div class="span2"> 
                       <select name="v_quest" id="v_quest" class="span2" required="required"  >
                         <option value="0" >Select Quest</option>
@@ -130,6 +116,20 @@ body {
                         <option value="18">The Watcher in the Water</option>
                       </select> 
                     </div> 
+                  </div>
+            </div>
+            </div>
+         
+            <div class="row">
+            <div class="span12">
+              {{#each MyApp.scorerController.players}}
+                   <form class="well">
+                    <div class="row show-grid">
+                    <button class="close" {{action "remove"}}>&times;</button>
+                    <div class="span1"><label><i class="icon-user "></i>{{name}}</label></div>
+                    <div class="span2">Final Threat Level {{view MyApp.myText name="threatLevel" valueBinding="threatLevel" type="number" class="span1"}}</div>
+                    <div class="span2"> Thread cost of Dead Heroes {{view MyApp.myText name="deadHeroTC" valueBinding="deadHeroTC"  type="number" class="span1"}}  </div>
+                    <div class="span2"> Damage Tokens on Remaining Heroes {{view MyApp.myText name="livingHeroDT" valueBinding="livingHeroDT" type="number"  class="span1"}} </div>
                     <div class="span2"> 
                       <select name="v_quest" id="v_quest" class="span2">
                             <option value="0" selected>Select Hero</option>
