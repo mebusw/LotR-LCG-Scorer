@@ -26,8 +26,13 @@
 //
 
 #import "MainViewController.h"
+#import "GADBannerView.h"
+
+#define GAD_PUBLISHER_ID @"a14f791eb38987e"
 
 @implementation MainViewController
+
+GADBannerView *gAdBanner;
 
 - (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -52,6 +57,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self addGAD];
 }
 
 - (void) viewDidUnload
@@ -115,6 +121,8 @@
      // Black base color for background matches the native apps
      theWebView.backgroundColor = [UIColor blackColor];
 
+    //[self addGAD];
+    
 	return [super webViewDidFinishLoad:theWebView];
 }
 
@@ -136,5 +144,41 @@
 	return [super webView:theWebView shouldStartLoadWithRequest:request navigationType:navigationType];
 }
 */
+
+#pragma mark - Google Ad
+
+-(void) addGAD {
+    NSLog(@"adding GAD");
+    
+    gAdBanner = [[GADBannerView alloc] initWithFrame:CGRectMake(0.0, self.view.frame.size.height, GAD_SIZE_320x50.width, GAD_SIZE_320x50.height)];
+    gAdBanner.adUnitID = GAD_PUBLISHER_ID;
+    gAdBanner.delegate = (id)self;
+    [gAdBanner setRootViewController:self];
+    [self.view addSubview:gAdBanner];
+    
+    GADRequest *request = [GADRequest request];
+    
+    /* Make the request for a test ad when running on simulator */
+    request.testDevices = [NSArray arrayWithObjects:GAD_SIMULATOR_ID, nil];
+    
+    [gAdBanner loadRequest:request];
+
+}
+
+- (void)adViewDidReceiveAd:(GADBannerView *)bannerView {
+    [UIView beginAnimations:@"BannerSlide" context:nil];
+    bannerView.frame = CGRectMake(0.0,
+                                  self.navigationController.view.frame.size.height -
+                                  bannerView.frame.size.height,
+                                  bannerView.frame.size.width,
+                                  bannerView.frame.size.height);
+    [UIView commitAnimations];
+    NSLog(@"gAd: hasAutoRefreshed=%d", [bannerView hasAutoRefreshed]);
+}
+
+- (void)adView:(GADBannerView *)bannerView didFailToReceiveAdWithError:(GADRequestError *)error {
+    NSLog(@"gAd: adView:didFailToReceiveAdWithError:%@", [error localizedDescription]);
+    
+}
 
 @end
