@@ -65,9 +65,10 @@ def read_all_gamelog():
     r = []
     for c in cds:
 		#c[1] = unicode(c[1])
-		r.append([cds[0], cds[2]])
+		#r.append([cds[0], cds[2]])
+		pass
 
-    return json.dumps(r, ensure_ascii=False)
+    return json.dumps(unicode(cds), ensure_ascii=False)
 
 
 @route('/static/<filename:path>')
