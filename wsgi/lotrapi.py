@@ -64,8 +64,9 @@ def read_all_gamelog():
 
     r = []
     for c in cds:
-		c[1]=unicode(c[1])
-		r.append(list(c))
+		c = list(c)
+		c[1] = unicode(c[1])
+		r.append(c)
 		pass
 
     return json.dumps(unicode(cds), ensure_ascii=False)
