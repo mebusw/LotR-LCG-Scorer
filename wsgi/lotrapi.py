@@ -55,6 +55,21 @@ def packages_show(pid):
     
     return json.dumps(['package', 'show', {'pid': pid}, [u'baz', None, 1.0, 2, {u'page': page}], unicode(cds), '>>>', cds[0][1]], ensure_ascii=False)
 
+@route('/gamelog/', method='GET')
+def read_all_gamelog():
+    sql = 'SELECT * from gamelog'
+    cursor.execute(sql)
+    cds = cursor.fetchall()
+    print cds
+
+    r = []
+    for c in cds:
+		c[1] = unicode(c[1])
+		r.append(c)
+
+    return json.dumps(r, ensure_ascii=False)
+
+
 @route('/static/<filename:path>')
 def server_static(filename):
     return bottle.static_file(filename, root='./wsgi/static')
