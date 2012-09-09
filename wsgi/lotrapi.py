@@ -55,7 +55,7 @@ def packages_show(pid):
     
     return json.dumps(['package', 'show', {'pid': pid}, [u'baz', None, 1.0, 2, {u'page': page}], unicode(cds), '>>>', cds[0][1]], ensure_ascii=False)
 
-@route('/gamelog/', method='GET')
+@route('/gamelog', method='GET')
 def read_all_gamelog():
     sql = 'SELECT * from gamelog'
     cursor.execute(sql)
