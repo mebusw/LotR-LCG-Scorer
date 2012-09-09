@@ -38,6 +38,8 @@
 		8F13047C15948EC400D76547 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F13047B15948EC400D76547 /* MainViewController.m */; };
 		8F13047E15948EC400D76547 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F13047D15948EC400D76547 /* MainViewController.xib */; };
 		8F13048815948EF200D76547 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 8F13048715948EF200D76547 /* www */; };
+		8FCA668515FCE0530083498D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FCA668415FCE0530083498D /* Default@2x.png */; };
+		8FCA668815FCE0F70083498D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FCA668715FCE0F70083498D /* icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +81,8 @@
 		8F13048015948EC400D76547 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; name = README; path = Plugins/README; sourceTree = "<group>"; };
 		8F13048115948EC400D76547 /* verify.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = verify.sh; sourceTree = "<group>"; };
 		8F13048715948EF200D76547 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
+		8FCA668415FCE0530083498D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		8FCA668715FCE0F70083498D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,8 @@
 		8F13041E15948EC400D76547 = {
 			isa = PBXGroup;
 			children = (
+				8FCA668715FCE0F70083498D /* icon.png */,
+				8FCA668415FCE0530083498D /* Default@2x.png */,
 				8F13048715948EF200D76547 /* www */,
 				8F13044A15948EC400D76547 /* LotR LCG Scorer */,
 				8F13042F15948EC400D76547 /* Frameworks */,
@@ -331,6 +337,8 @@
 				8F13047515948EC400D76547 /* Cordova.plist in Resources */,
 				8F13047E15948EC400D76547 /* MainViewController.xib in Resources */,
 				8F13048815948EF200D76547 /* www in Resources */,
+				8FCA668515FCE0530083498D /* Default@2x.png in Resources */,
+				8FCA668815FCE0F70083498D /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +550,7 @@
 				8F13048615948EC400D76547 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
