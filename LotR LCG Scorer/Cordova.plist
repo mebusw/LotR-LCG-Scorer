@@ -21,7 +21,14 @@
 	<key>OpenAllWhitelistURLsInWebView</key>
 	<false/>
 	<key>ExternalHosts</key>
-	<array/>
+	<array>
+		<string>*.*</string>
+		<string>www.googleadservices.com</string>
+		<string>www.gameharbor.com.cn</string>
+		<string>www.fantasyflightgames.com</string>
+		<string>googleads.g.doubleclick.net</string>
+		<string>media.admob.com</string>
+	</array>
 	<key>Plugins</key>
 	<dict>
 		<key>Logger</key>

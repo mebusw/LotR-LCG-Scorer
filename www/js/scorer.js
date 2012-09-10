@@ -20,8 +20,8 @@ function onDeviceReady()
 
 MyApp.scorerController = Em.Object.create({
     players: [
-        Em.Object.create({name:'Saron', threatLevel:30, deadHeroTC:0, livingHeroDT:0}),
-        Em.Object.create({name:'Bilbo', threatLevel:0, deadHeroTC:0, livingHeroDT:0})
+        Em.Object.create({name:'Player Saron', threatLevel:30, deadHeroTC:0, livingHeroDT:0}),
+        Em.Object.create({name:'Player Bilbo', threatLevel:0, deadHeroTC:0, livingHeroDT:0})
     ],
     rounds: 0,
     earnedVP: 0,

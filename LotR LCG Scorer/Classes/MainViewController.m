@@ -57,7 +57,7 @@ GADBannerView *gAdBanner;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self addGAD];
+
 }
 
 - (void) viewDidUnload
@@ -110,7 +110,10 @@ GADBannerView *gAdBanner;
 
 - (void) webViewDidFinishLoad:(UIWebView*) theWebView 
 {
-     // only valid if ___PROJECTNAME__-Info.plist specifies a protocol to handle
+
+    [self addGAD];
+
+    // only valid if ___PROJECTNAME__-Info.plist specifies a protocol to handle
      if (self.invokeString)
      {
         // this is passed before the deviceready event is fired, so you can access it in js when you receive deviceready
@@ -121,7 +124,6 @@ GADBannerView *gAdBanner;
      // Black base color for background matches the native apps
      theWebView.backgroundColor = [UIColor blackColor];
 
-    //[self addGAD];
     
 	return [super webViewDidFinishLoad:theWebView];
 }
@@ -168,7 +170,7 @@ GADBannerView *gAdBanner;
 - (void)adViewDidReceiveAd:(GADBannerView *)bannerView {
     [UIView beginAnimations:@"BannerSlide" context:nil];
     bannerView.frame = CGRectMake(0.0,
-                                  self.navigationController.view.frame.size.height -
+                                  self.view.frame.size.height -
                                   bannerView.frame.size.height,
                                   bannerView.frame.size.width,
                                   bannerView.frame.size.height);
