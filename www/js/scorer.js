@@ -48,6 +48,27 @@ MyApp.scorerController.addObserver('players.@each.threatLevel', function() {
 });
 
 MyApp.ScorerView = Em.View.extend({
+  quest: [
+        {val: 0, name: 'Select Quest'},
+        {val: 8, name: 'A Journey to Rhosgobel'},
+        {val: 6, name: 'Conflict at the Carrock'},
+        {val: 3, name: 'Escape from Dol Guldur'},
+        {val: 14, name: 'Flight from Moria'},
+        {val: 20, name: 'Foundations of Stone'},
+        {val: 15, name: 'Into the Pit'},
+        {val: 4, name: 'Journey Down the Anduin'},
+        {val: 1, name: 'Passage Through Mirkwood'},
+        {val: 11, name: 'Return to Mirkwood'},
+        {val: 17, name: 'Road to Rivendell'},
+        {val: 10, name: 'The Dead Marshes'},
+        {val: 9, name: 'The Hills of Emyn Muil'},
+        {val: 5, name: 'The Hunt for Gollum'},
+        {val: 19, name: 'The Long Dark'},
+        {val: 7, name: 'The Massing at Osgiliath'},
+        {val: 16, name: 'The Redhorn Gate'},
+        {val: 13, name: 'The Seventh Level'},
+        {val: 18, name: 'The Watcher in the Water'}
+    ],  
   add: function() {
     console.log('adding');
     var newPlayer = Em.Object.create({name:'Gollum', threatLevel:20, deadHeroTC:0, livingHeroDT:0});

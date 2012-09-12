@@ -101,27 +101,12 @@
                    <div class="span2"><i class="icon-certificate"></i>VP Earned {{view MyApp.myText name="earnedVP" valueBinding="MyApp.scorerController.earnedVP" type="number" class="span1"}}</div>
                    <div class="span2"><i class="icon-calendar"></i>Date: <input type="date" required="required" class="span2"/></div>
                     <div class="span2"> 
-                      <select name="v_quest" id="v_quest" class="span2" required="required"  >
-                        <option value="0" >Select Quest</option>
-                       <option value="8">A Journey to Rhosgobel</option>
-                        <option value="6">Conflict at the Carrock</option>
-                        <option value="3">Escape from Dol Guldur</option>
-                        <option value="14">Flight from Moria</option>
-                        <option value="20">Foundations of Stone</option>
-                        <option value="15">Into the Pit</option>
-                        <option value="4">Journey Down the Anduin</option>
-                        <option value="1">Passage Through Mirkwood</option>
-                        <option value="11">Return to Mirkwood</option>
-                        <option value="17">Road to Rivendell</option>
-                        <option value="10">The Dead Marshes</option>
-                        <option value="9">The Hills of Emyn Muil</option>
-                        <option value="5">The Hunt for Gollum</option>
-                        <option value="19">The Long Dark</option>
-                        <option value="7">The Massing at Osgiliath</option>
-                        <option value="16">The Redhorn Gate</option>
-                        <option value="13">The Seventh Level</option>
-                        <option value="18">The Watcher in the Water</option>
-                      </select> 
+                        <select name="v_quest" id="v_quest" class="span2" required="required" >
+                            {{#each view.quest}}
+                            <option value="{{val}}" >{{name}}</option>
+                            {{/each}}
+                        </select>
+                        
                     </div> 
                   </div>
             </div>
@@ -138,7 +123,7 @@
                     <div class="span2"><i class="icon-plane"></i>Thread Cost of Dead Heroes {{view MyApp.myText name="deadHeroTC" valueBinding="deadHeroTC" type="number" class="span1"}}  </div>
                     <div class="span2"><i class="icon-heart"></i> Damage Tokens on Remaining Heroes {{view MyApp.myText name="livingHeroDT" valueBinding="livingHeroDT" type="number"  class="span1"}} </div>
                     <div class="span2"> 
-                      <select name="v_quest" id="v_quest" class="span2">
+                      <select name="v_hero" id="v_hero" class="span2">
                             <option value="0" selected>Select Hero</option>
                             <option value="2" >&Eacute;owyn</option>
                             <option value="5" >Aragorn (Core Set)</option>
