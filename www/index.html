@@ -123,34 +123,21 @@
                     <div class="span2"><i class="icon-plane"></i>Thread Cost of Dead Heroes {{view MyApp.myText name="deadHeroTC" valueBinding="deadHeroTC" type="number" class="span1"}}  </div>
                     <div class="span2"><i class="icon-heart"></i> Damage Tokens on Remaining Heroes {{view MyApp.myText name="livingHeroDT" valueBinding="livingHeroDT" type="number"  class="span1"}} </div>
                     <div class="span2"> 
-                      <select name="v_hero" id="v_hero" class="span2">
-                            <option value="0" selected>Select Hero</option>
-                            <option value="2" >&Eacute;owyn</option>
-                            <option value="5" >Aragorn (Core Set)</option>
-                            <option value="24" >Aragorn (The Watcher in the Water)</option>
-                            <option value="13" >Beravor</option>
-                            <option value="21" >Bifur</option>
-                            <option value="14" >Bilbo Baggins</option>
-                            <option value="18" >Boromir</option>
-                            <option value="17" >Brand son of Bain</option>
-                            <option value="19" >D&aacute;in Ironfoot</option>
-                            <option value="4" >D&uacute;nhere</option>
-                            <option value="11" >Denethor</option>
-                            <option value="20" >Dwalin</option>
-                            <option value="3" >Eleanor</option>
-                            <option value="22" >Elrohir</option>
-                            <option value="23" >Elladan</option>
-                            <option value="15" >Frodo Baggins</option>
-                            <option value="10" >Gimli</option>
-                            <option value="7" >Gl&oacute;in</option>
-                            <option value="12" >Glorfindel (Core Set)</option>
-                            <option value="26" >Glorfindel (Foundations of Stone)</option>
-                            <option value="25" >H&aacute;ma</option>
-                            <option value="9" >Legolas</option>
-                            <option value="16" >Prince Imrahil</option>
-                            <option value="6" >Th&eacute;odred</option>
-                            <option value="8" >Thalin</option>
-                      </select>
+                    <select name="v_hero1" id="v_hero1" class="span2">
+                            {{#each view.hero}}
+                            <option value="{{val}}" >{{name}}</option>
+                            {{/each}}                    
+                    </select>
+                    <select name="v_hero2" id="v_hero2" class="span2">
+                            {{#each view.hero}}
+                            <option value="{{val}}" >{{name}}</option>
+                            {{/each}}                    
+                    </select>
+                    <select name="v_hero3" id="v_hero3" class="span2">
+                            {{#each view.hero}}
+                            <option value="{{val}}" >{{name}}</option>
+                            {{/each}}                    
+                    </select>
                    </div>
                 </div>       
               </form>
