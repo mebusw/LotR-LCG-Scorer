@@ -20,7 +20,7 @@ function onDeviceReady()
 
 MyApp.scorerController = Em.Object.create({
     players: [
-        Em.Object.create({name:'Player Saron', threatLevel:30, deadHeroTC:0, livingHeroDT:0}),
+        Em.Object.create({name:'Player Tolkien', threatLevel:30, deadHeroTC:0, livingHeroDT:0}),
         Em.Object.create({name:'Player Bilbo', threatLevel:0, deadHeroTC:0, livingHeroDT:0})
     ],
     rounds: 0,
@@ -110,6 +110,18 @@ MyApp.ScorerView = Em.View.extend({
   remove: function() {
     console.log('removing' );
     MyApp.scorerController.get('players').popObject();
+  },
+  submit: function() {
+    console.log('submitting');
+    $.ajax({
+       url: "#",
+       context: document.body
+    }).done(function() {
+         //$(this).removeClass("btn");
+         console.log('submitted');
+    }).success(function() {
+         console.log('successed');
+    });;
   },
 
 });

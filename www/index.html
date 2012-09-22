@@ -100,22 +100,25 @@
                    <div class="span2"><i class="icon-retweet"></i>Rounds: {{view MyApp.myText name="rounds" valueBinding="MyApp.scorerController.rounds" type="number"  class="span1"}}</div>
                    <div class="span2"><i class="icon-certificate"></i>VP Earned {{view MyApp.myText name="earnedVP" valueBinding="MyApp.scorerController.earnedVP" type="number" class="span1"}}</div>
                    <div class="span2"><i class="icon-calendar"></i>Date: <input type="date" required="required" class="span2"/></div>
-                    <div class="span2"> 
+                   <div class="span2"> 
                         <select name="v_quest" id="v_quest" class="span2" required="required" >
                             {{#each view.quest}}
                             <option value="{{val}}" >{{name}}</option>
                             {{/each}}
                         </select>
-                        
-                    </div> 
-                  </div>
+                   </div>
+                   <div class="span2">
+                       <a class="btn btn-info" {{action "submit"}}><i class="icon-plus icon-white"></i>Log This Game</a>
+                   </div>
+          
+               </div>
             </div>
             </div>
          
             <div class="row">
             <div class="span12">
               {{#each MyApp.scorerController.players}}
-                   <form class="well">
+               <form class="well">
                     <div class="row show-grid">
                     <button class="close" {{action "remove"}}>&times;</button>
                     <div class="span2"><label><i class="icon-user "></i>{{name}}</label></div>
@@ -123,17 +126,17 @@
                     <div class="span2"><i class="icon-plane"></i>Thread Cost of Dead Heroes {{view MyApp.myText name="deadHeroTC" valueBinding="deadHeroTC" type="number" class="span1"}}  </div>
                     <div class="span2"><i class="icon-heart"></i> Damage Tokens on Remaining Heroes {{view MyApp.myText name="livingHeroDT" valueBinding="livingHeroDT" type="number"  class="span1"}} </div>
                     <div class="span2"> 
-                    <select name="v_hero1" id="v_hero1" class="span2">
+                    <select name="v_hero1" id="v_hero1" class="span2" required="required">
                             {{#each view.hero}}
                             <option value="{{val}}" >{{name}}</option>
                             {{/each}}                    
                     </select>
-                    <select name="v_hero2" id="v_hero2" class="span2">
+                    <select name="v_hero2" id="v_hero2" class="span2" required="required">
                             {{#each view.hero}}
                             <option value="{{val}}" >{{name}}</option>
                             {{/each}}                    
                     </select>
-                    <select name="v_hero3" id="v_hero3" class="span2">
+                    <select name="v_hero3" id="v_hero3" class="span2" required="required">
                             {{#each view.hero}}
                             <option value="{{val}}" >{{name}}</option>
                             {{/each}}                    
@@ -145,8 +148,12 @@
               {{/each}}
               </div>
               </div>
-            
-            
+        <div class="row">
+          <div class="span12 well">
+          <a class="btn btn-info" {{action "submit"}}><i class="icon-plus icon-white"></i>Log This Game</a>
+        
+          </div>
+        </div>
         {{/view}}
         </div>
       </script>
@@ -181,11 +188,9 @@
         <div class="bar" style="width: 40%;"></div>
       </div>
       -->
-    <div class="span2">
         <div class="row">
             <div class="span12 well"><!-- placeholder for gAD --></div>
         </div>
-    </div>
     </div><!-- /container -->
     <!-- Le javascript
     ================================================== -->
