@@ -168,16 +168,32 @@ GADBannerView *gAdBanner;
 }
 
 - (void)adViewDidReceiveAd:(GADBannerView *)bannerView {
-    [UIView beginAnimations:@"BannerSlide" context:nil];
-    bannerView.frame = CGRectMake(0.0,
-                                  self.view.frame.size.height -
-                                  bannerView.frame.size.height,
-                                  bannerView.frame.size.width,
-                                  bannerView.frame.size.height);
-    [UIView commitAnimations];
-    NSLog(@"gAd: hasAutoRefreshed=%d", [bannerView hasAutoRefreshed]);
+    NSLog(@"gAd: hasAutoRefreshed=%d <%f,%f>", [bannerView hasAutoRefreshed], bannerView.frame.origin.x, bannerView.frame.origin.y);
+    //[self didRotateFromInterfaceOrientation:(UIInterfaceOrientation)[[UIDevice currentDevice] orientation]];
 }
 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+    CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
+    NSLog(@"%d h=%f w=%f x=%f y=%f", fromInterfaceOrientation, screenRect.size.height, screenRect.size.width, screenRect.origin.x, screenRect.origin.y);
+    [UIView beginAnimations:@"BannerSlide" context:nil];
+    if (fromInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || fromInterfaceOrientation == UIInterfaceOrientationLandscapeRight) {
+        gAdBanner.frame = CGRectMake(0.0,
+                                     screenRect.size.height -
+                                     gAdBanner.frame.size.height,
+                                     gAdBanner.frame.size.width,
+                                     gAdBanner.frame.size.height);
+    } else {
+        gAdBanner.frame = CGRectMake(0.0,
+                                     screenRect.size.width -
+                                     gAdBanner.frame.size.height,
+                                     gAdBanner.frame.size.width,
+                                     gAdBanner.frame.size.height);
+    }
+    [UIView commitAnimations];
+
+}
 - (void)adView:(GADBannerView *)bannerView didFailToReceiveAdWithError:(GADRequestError *)error {
     NSLog(@"gAd: adView:didFailToReceiveAdWithError:%@", [error localizedDescription]);
     
